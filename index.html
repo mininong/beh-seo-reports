@@ -3,245 +3,497 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BEH | รายงานเว็บไซต์ &amp; SEO ประจำสัปดาห์ 3–9 ส.ค. 2569</title>
+<title>BEH | รายงานเว็บไซต์ &amp; SEO ประจำสัปดาห์ 17–23 ส.ค. 2569</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;700;800&family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
-:root{
-  --beh-navy:#0057A8; --beh-sky:#4A9ED4; --beh-teal-soft:#A8C4CC; --beh-gold:#C9A84C;
-  --beh-white-warm:#F8F9FA; --beh-charcoal:#2C3E50; --beh-gray-light:#E8EDF2; --beh-success:#27AE60;
-  --beh-warn:#B9791F;
-  --font-heading:'Prompt','Sarabun',sans-serif; --font-body:'Sarabun','Prompt',sans-serif;
-  --radius-card:8px; --radius-badge:4px;
-  --shadow-card:0 2px 8px rgba(0,87,168,.10); --shadow-highlight:0 4px 16px rgba(0,87,168,.18);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--beh-white-warm);font-family:var(--font-body);color:var(--beh-charcoal);padding:16px}
-.report-wrapper{max-width:1360px;margin:0 auto;background:var(--beh-white-warm)}
-/* HEADER */
-.header{background:linear-gradient(100deg,var(--beh-navy) 0%,#02407c 100%);color:#fff;border-radius:var(--radius-card);padding:18px 24px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;box-shadow:var(--shadow-highlight)}
-.header h1{font-family:var(--font-heading);font-size:23px;font-weight:800;letter-spacing:.2px}
-.header .sub{font-size:12.5px;font-weight:300;opacity:.92;margin-top:3px}
-.header .goal{font-size:11px;margin-top:8px;border-left:3px solid var(--beh-gold);padding-left:10px;opacity:.95;max-width:640px;line-height:1.55}
-.header .meta{text-align:right;font-size:10.5px;line-height:1.85;opacity:.9;min-width:210px}
-.header .meta b{color:var(--beh-gold);font-weight:600}
-.period-chip{display:inline-block;background:var(--beh-gold);color:#3a2c05;font-family:var(--font-heading);font-weight:700;font-size:12px;padding:3px 12px;border-radius:var(--radius-badge);margin-top:8px}
-/* GRID */
-.grid{display:grid;grid-template-columns:30% 40% 30%;gap:20px;margin-top:20px}
-@media(max-width:1080px){.grid{grid-template-columns:1fr}}
-.section-head{font-family:var(--font-heading);font-size:14px;font-weight:700;color:var(--beh-navy);margin-bottom:10px;display:flex;align-items:center;gap:7px}
-.section-head::after{content:"";flex:1;height:2px;background:var(--beh-gray-light)}
-/* HIGHLIGHTS */
-.highlight-item{display:flex;gap:12px;padding:12px;background:#fff;border-radius:var(--radius-card);border-left:4px solid var(--beh-gold);margin-bottom:10px;box-shadow:var(--shadow-card)}
-.highlight-item .rank{font-size:22px;width:30px;text-align:center;line-height:1.2}
-.highlight-item .headline{font-weight:700;font-size:13.5px;color:var(--beh-charcoal);line-height:1.45}
-.highlight-item .headline .big{font-family:var(--font-heading);font-size:19px;font-weight:800;color:var(--beh-navy)}
-.highlight-item .headline .up{color:var(--beh-success);font-weight:700}
-.highlight-item .sub{font-size:11px;color:#6B7C93;margin-top:4px;line-height:1.6}
-.impact-quote{background:#fff;border:1px dashed var(--beh-teal-soft);border-radius:var(--radius-card);padding:11px 13px;font-size:11px;line-height:1.65;color:var(--beh-charcoal);margin-top:2px}
-.impact-quote b{color:var(--beh-navy)}
-/* METRICS */
-.metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
-.metric-card{background:#fff;border-radius:var(--radius-card);padding:13px 14px;box-shadow:var(--shadow-card);border-left:4px solid var(--beh-navy)}
-.metric-card .label{font-size:10.5px;color:#6B7C93;font-weight:600;letter-spacing:.2px}
-.metric-card .number{font-family:var(--font-heading);font-size:29px;font-weight:800;color:var(--beh-navy);line-height:1.15;margin-top:2px}
-.metric-card .beforeline{font-size:10px;color:#8A9AAD;margin-top:2px}
-.metric-card .beforeline .before-label{color:var(--beh-teal-soft);font-weight:600}
-.change-badge{display:inline-block;background:var(--beh-success);color:#fff;font-size:11px;padding:2px 8px;border-radius:var(--radius-badge);font-weight:600;margin-top:6px}
-.change-badge.down{background:var(--beh-warn)}
-.chart-card{background:#fff;border-radius:var(--radius-card);padding:14px;box-shadow:var(--shadow-card)}
-.chart-title{font-family:var(--font-heading);font-size:12.5px;font-weight:600;color:var(--beh-navy);margin-bottom:8px}
-.chart-note{font-size:9px;color:#8A9AAD;line-height:1.6;margin-top:9px;border-top:1px solid var(--beh-gray-light);padding-top:7px}
-/* NEXT STEPS */
-.next-steps-panel{background:var(--beh-navy);color:#fff;border-radius:var(--radius-card);padding:16px;box-shadow:var(--shadow-highlight)}
-.next-steps-panel h3{color:var(--beh-gold);font-family:var(--font-heading);font-size:13.5px;font-weight:700;margin-bottom:11px}
-.next-steps-panel h3+.done-item{margin-top:-2px}
-.done-item,.step-item{display:flex;gap:8px;margin-bottom:9px;font-size:11px;line-height:1.6}
-.step-arrow{color:var(--beh-gold);font-weight:700}
-.step-item .exp{display:block;opacity:.8;font-size:10px;margin-top:1px}
-.panel-divider{height:1px;background:rgba(255,255,255,.18);margin:13px 0}
-.cta-text{background:rgba(255,255,255,.10);border-radius:var(--radius-badge);padding:11px;font-size:10.5px;font-style:italic;line-height:1.7;margin-top:12px;border-left:3px solid var(--beh-gold)}
-.oppo-card{background:#fff;border-radius:var(--radius-card);padding:13px;box-shadow:var(--shadow-card);border-left:4px solid var(--beh-sky);margin-top:14px}
-.oppo-card .t{font-family:var(--font-heading);font-size:12px;font-weight:700;color:var(--beh-navy);margin-bottom:5px}
-.oppo-card .b{font-size:10.5px;line-height:1.65;color:#4A5A6A}
-.oppo-card .b b{color:var(--beh-charcoal)}
-/* FOOTER */
-.footer{margin-top:18px;border-top:2px solid var(--beh-gray-light);padding-top:10px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:9px;color:#8A9AAD;line-height:1.7}
-@media print{body{margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}.report-wrapper{width:297mm;height:210mm;overflow:hidden;page-break-after:avoid}}
+  :root {
+    --beh-navy:       #0057A8;
+    --beh-sky:        #4A9ED4;
+    --beh-teal-soft:  #A8C4CC;
+    --beh-gold:       #C9A84C;
+    --beh-white-warm: #F8F9FA;
+    --beh-charcoal:   #2C3E50;
+    --beh-gray-light: #E8EDF2;
+    --beh-success:    #27AE60;
+    --beh-muted:      #6B7C93;
+
+    --font-heading: 'Prompt', 'Sarabun', sans-serif;
+    --font-body:    'Sarabun', 'Prompt', sans-serif;
+
+    --text-report-title:   clamp(19px, 2.3vw, 26px);
+    --text-highlight-num:  clamp(26px, 3.6vw, 38px);
+    --text-section-head:   clamp(13px, 1.5vw, 16px);
+    --text-body:           clamp(10px, 1.15vw, 12px);
+    --text-caption:        clamp(8px, 1vw, 9px);
+
+    --space-page-margin:   24px;
+    --space-section-gap:   16px;
+    --space-card-padding:  14px;
+    --space-inner:         8px;
+
+    --radius-card:     8px;
+    --radius-badge:    4px;
+    --shadow-card:     0 2px 8px rgba(0, 87, 168, 0.10);
+    --shadow-highlight: 0 4px 16px rgba(0, 87, 168, 0.18);
+
+    --chart-before-color:  var(--beh-teal-soft);
+    --chart-after-color:   var(--beh-navy);
+    --chart-trend-color:   var(--beh-gold);
+    --chart-grid-color:    #E8EDF2;
+    --chart-label-color:   var(--beh-charcoal);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--beh-white-warm);
+    font-family: var(--font-body);
+    color: var(--beh-charcoal);
+  }
+
+  .report-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: var(--space-page-margin);
+  }
+
+  /* HEADER */
+  .header-block {
+    background: white;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    padding: 18px var(--space-card-padding);
+    margin-bottom: var(--space-section-gap);
+    border-top: 4px solid var(--beh-navy);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .header-left h1 {
+    font-family: var(--font-heading);
+    font-size: var(--text-report-title);
+    font-weight: 800;
+    color: var(--beh-navy);
+    margin: 0 0 4px 0;
+  }
+
+  .header-left .sub-title {
+    font-size: var(--text-body);
+    color: var(--beh-muted);
+    margin: 0 0 6px 0;
+  }
+
+  .header-left .period {
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--beh-charcoal);
+  }
+
+  .header-left .goal {
+    font-size: var(--text-caption);
+    color: var(--beh-muted);
+    margin-top: 6px;
+    max-width: 640px;
+  }
+
+  .header-right {
+    text-align: right;
+    font-size: var(--text-caption);
+    color: var(--beh-muted);
+    line-height: 1.6;
+  }
+
+  .header-right strong { color: var(--beh-charcoal); }
+
+  /* GRID */
+  .grid-3col {
+    display: grid;
+    grid-template-columns: 27% 44% 29%;
+    gap: var(--space-section-gap);
+    align-items: start;
+  }
+
+  .panel-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-section-head);
+    font-weight: 700;
+    color: var(--beh-navy);
+    margin: 0 0 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* HIGHLIGHTS */
+  .highlights-panel { display: flex; flex-direction: column; }
+
+  .highlight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+    background: white;
+    border-radius: var(--radius-card);
+    border-left: 4px solid var(--beh-gold);
+    margin-bottom: 10px;
+    box-shadow: var(--shadow-card);
+  }
+
+  .highlight-item .rank { font-size: 22px; width: 28px; text-align: center; flex-shrink: 0; }
+  .highlight-item .headline { font-weight: 700; font-size: 13px; color: var(--beh-charcoal); line-height: 1.4; }
+  .highlight-item .sub { font-size: 11px; color: var(--beh-muted); margin-top: 4px; line-height: 1.5; }
+
+  .callout {
+    background: var(--beh-white-warm);
+    border-radius: var(--radius-card);
+    padding: 12px;
+    font-size: 11px;
+    color: var(--beh-charcoal);
+    line-height: 1.6;
+    border-left: 3px solid var(--beh-sky);
+    margin-top: 4px;
+  }
+  .callout b { color: var(--beh-navy); }
+
+  /* CENTER: METRICS + CHART */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: var(--space-section-gap);
+  }
+
+  .metric-card {
+    background: white;
+    border-radius: var(--radius-card);
+    padding: var(--space-card-padding);
+    box-shadow: var(--shadow-card);
+    border-left: 4px solid var(--beh-navy);
+  }
+
+  .metric-card .label { font-size: 11px; color: var(--beh-muted); font-weight: 600; margin-bottom: 4px; }
+  .metric-card .number { font-size: var(--text-highlight-num); font-weight: 800; color: var(--beh-navy); line-height: 1; margin-bottom: 6px; }
+  .metric-card .compare { font-size: 10.5px; color: var(--beh-muted); margin-bottom: 6px; }
+  .metric-card .compare strong { color: var(--beh-charcoal); }
+
+  .change-badge {
+    display: inline-block;
+    color: white;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: var(--radius-badge);
+    font-weight: 700;
+  }
+  .change-badge.up { background: var(--beh-success); }
+  .change-badge.down { background: var(--beh-muted); }
+
+  .chart-card {
+    background: white;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    padding: var(--space-card-padding);
+  }
+
+  .chart-card h3 {
+    font-family: var(--font-heading);
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--beh-charcoal);
+    margin: 0 0 8px 0;
+  }
+
+  .chart-wrap { height: 220px; }
+
+  .chart-footnote {
+    font-size: var(--text-caption);
+    color: var(--beh-muted);
+    margin-top: 10px;
+    line-height: 1.6;
+    border-top: 1px solid var(--beh-gray-light);
+    padding-top: 8px;
+  }
+
+  /* NEXT STEPS PANEL */
+  .next-steps-panel {
+    background: var(--beh-navy);
+    color: white;
+    border-radius: var(--radius-card);
+    padding: var(--space-card-padding);
+    box-shadow: var(--shadow-highlight);
+  }
+
+  .next-steps-panel h3 {
+    color: var(--beh-gold);
+    font-size: 13px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    font-family: var(--font-heading);
+  }
+
+  .next-steps-panel .status-item {
+    font-size: 11px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    display: flex;
+    gap: 6px;
+  }
+
+  .next-steps-panel .step-item {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-size: 11px;
+    line-height: 1.55;
+  }
+
+  .next-steps-panel .step-arrow { color: var(--beh-gold); font-weight: bold; flex-shrink: 0; }
+  .next-steps-panel .step-result { color: rgba(255,255,255,0.75); display: block; margin-top: 2px; font-size: 10.5px; }
+
+  .next-steps-panel .cta-text {
+    background: rgba(255,255,255,0.1);
+    border-radius: var(--radius-badge);
+    padding: 10px;
+    font-size: 11px;
+    font-style: italic;
+    margin-top: 10px;
+    border-left: 3px solid var(--beh-gold);
+    line-height: 1.6;
+  }
+
+  .opportunity-card {
+    background: white;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    padding: var(--space-card-padding);
+    margin-top: var(--space-section-gap);
+    border-left: 4px solid var(--beh-gold);
+    grid-column: 1 / -1;
+  }
+
+  .opportunity-card h3 {
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--beh-navy);
+    margin: 0 0 8px 0;
+  }
+
+  .opportunity-card p { font-size: 11.5px; line-height: 1.7; margin: 0 0 8px 0; color: var(--beh-charcoal); }
+  .opportunity-card p:last-child { margin-bottom: 0; }
+  .opportunity-card .movers { color: var(--beh-muted); }
+  .opportunity-card b.gold { color: var(--beh-gold); }
+
+  /* FOOTER */
+  .footer {
+    margin-top: var(--space-section-gap);
+    padding-top: 12px;
+    border-top: 1px solid var(--beh-gray-light);
+    font-size: var(--text-caption);
+    color: var(--beh-muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  @media (max-width: 900px) {
+    .grid-3col { grid-template-columns: 1fr; }
+    .header-right { text-align: left; }
+  }
+
+  @media print {
+    body { margin: 0; }
+    .report-wrapper { width: 297mm; padding: 10mm; }
+    .shadow-card, .metric-card, .highlight-item, .chart-card, .opportunity-card { box-shadow: none; border: 1px solid var(--beh-gray-light); }
+  }
 </style>
 </head>
 <body>
 <div class="report-wrapper">
 
-  <!-- ===== HEADER ===== -->
-  <div class="header">
-    <div>
+  <!-- HEADER -->
+  <div class="header-block">
+    <div class="header-left">
       <h1>🏥 โรงพยาบาลจักษุกรุงเทพ | Bangkok Eye Hospital</h1>
-      <div class="sub">สรุปผลการดำเนินงานด้าน Digital Presence &amp; SEO — รายงานประจำสัปดาห์</div>
-      <div class="period-chip">สัปดาห์ที่ 3–9 สิงหาคม 2569 &nbsp;|&nbsp; เทียบกับ 27 ก.ค. – 2 ส.ค. 2569</div>
-      <div class="goal">เป้าหมายหลัก: เพิ่มการมองเห็นเว็บไซต์บนผลการค้นหา เพื่อดึงดูดผู้ป่วยใหม่จากช่องทางออนไลน์ และลดการพึ่งพาการตลาดแบบ Paid โดยไม่จำเป็น</div>
+      <p class="sub-title">สรุปผลการดำเนินงานด้าน Digital Presence &amp; SEO — รายงานประจำสัปดาห์</p>
+      <p class="period">สัปดาห์ที่ 17–23 สิงหาคม 2569 | เทียบกับ 10–16 สิงหาคม 2569</p>
+      <p class="goal">เป้าหมายหลัก: เพิ่มการมองเห็นเว็บไซต์บนผลการค้นหา เพื่อดึงดูดผู้ป่วยใหม่จากช่องทางออนไลน์ และลดการพึ่งพาการตลาดแบบ Paid โดยไม่จำเป็น</p>
     </div>
-    <div class="meta">
-      <div><b>แหล่งข้อมูล:</b> Google Search Console<br>(ผ่าน Windsor.ai)</div>
-      <div><b>ผู้จัดทำ:</b> ฝ่ายการตลาดดิจิทัล / Web Admin</div>
-      <div><b>วันที่จัดทำ:</b> 10 สิงหาคม 2569</div>
+    <div class="header-right">
+      <div><strong>แหล่งข้อมูล:</strong> Google Search Console (ผ่าน Windsor.ai)</div>
+      <div><strong>ผู้จัดทำ:</strong> ฝ่ายการตลาดดิจิทัล / Web Admin</div>
+      <div><strong>วันที่จัดทำ:</strong> 24 สิงหาคม 2569</div>
     </div>
   </div>
 
-  <div class="grid">
+  <!-- 3 COLUMN GRID -->
+  <div class="grid-3col">
 
-    <!-- ===== COL 1: TOP 3 HIGHLIGHTS ===== -->
-    <div>
-      <div class="section-head">🏆 ไฮไลต์เด่นประจำสัปดาห์</div>
+    <!-- LEFT: HIGHLIGHTS -->
+    <div class="highlights-panel">
+      <p class="panel-title">🏆 ไฮไลต์เด่นประจำสัปดาห์</p>
 
       <div class="highlight-item">
         <div class="rank">🥇</div>
         <div>
-          <div class="headline">ผู้เข้าชมจาก Google เพิ่มขึ้น <span class="up">+7.1%</span> — รวม <span class="big">6,175</span> คลิก</div>
-          <div class="sub">เพิ่มขึ้น 408 คลิกจากสัปดาห์ก่อน (5,767 คลิก) → เท่ากับผู้สนใจบริการโรงพยาบาลที่เข้าถึงข้อมูลเราได้มากขึ้นราว 400 รายในสัปดาห์เดียว</div>
+          <div class="headline">ผู้เข้าชมจาก Google เพิ่มขึ้น +20.06% — รวม 6,686 คลิก</div>
+          <div class="sub">เพิ่มขึ้น 1,117 คลิกจากสัปดาห์ก่อน (5,569 คลิก) → เท่ากับผู้สนใจบริการโรงพยาบาลที่เข้าถึงข้อมูลเราได้มากขึ้นกว่า 1,100 รายในสัปดาห์เดียว</div>
         </div>
       </div>
 
       <div class="highlight-item">
-        <div class="rank">📈</div>
+        <div class="rank">🎯</div>
         <div>
-          <div class="headline">การมองเห็นบน Google เพิ่มขึ้น <span class="up">+11.3%</span> — <span class="big">462,075</span> ครั้ง</div>
-          <div class="sub">เว็บไซต์ปรากฏต่อสายตาผู้ค้นหาเพิ่มขึ้น 46,970 ครั้ง เทียบกับสัปดาห์ก่อน (415,105 ครั้ง) — เปรียบเสมือน Billboard ดิจิทัลที่ไม่มีค่าเช่า ทำงาน 24 ชั่วโมง</div>
+          <div class="headline">คุณภาพการค้นหาดีขึ้นชัดเจน — CTR +22.84% สู่ 1.52%</div>
+          <div class="sub">แม้การมองเห็นจะลดลงเล็กน้อย (-2.27%) แต่อันดับเฉลี่ยดีขึ้นจาก 6.77 เป็น 6.21 — สัญญาณว่าเว็บไซต์ขึ้นแสดงต่อผู้ค้นหาที่ตรงกลุ่มเป้าหมายมากขึ้น</div>
         </div>
       </div>
 
       <div class="highlight-item">
-        <div class="rank">🔑</div>
+        <div class="rank">🚀</div>
         <div>
-          <div class="headline">คำค้นชื่อแบรนด์ “bangkok eye hospital” ขยับสู่อันดับ <span class="big">1.1</span></div>
-          <div class="sub">จากอันดับเฉลี่ย 3.6 ขึ้นมาเป็น 1.1 พร้อมอัตราการคลิก 22.8% (สูงสุดในกลุ่มคำค้นหลัก) — ผู้ที่ค้นหาชื่อโรงพยาบาลพบเราเป็นผลลัพธ์แรกทันที</div>
+          <div class="headline">บทความ "ก้อนไขมันที่เปลือกตา" โตพุ่ง +267.97%</div>
+          <div class="sub">จาก 128 เป็น 471 คลิกในสัปดาห์เดียว (eyelid-fat-lumps) — เป็นบทความที่เติบโตเร็วที่สุดของเว็บไซต์ในสัปดาห์นี้</div>
         </div>
       </div>
 
-      <div class="impact-quote">
-        💬 <b>บทความที่ติดอันดับต้น ๆ คือประตูบานแรกสู่การนัดหมาย</b> — สัปดาห์นี้บทความ “ตากระตุก” ทำคลิกสูงสุด <b>507 คลิก</b> (+13.9%) ตามด้วย “ตาเหลือง” 364 คลิก และ “ตาพร่ามัว” 336 คลิก คิดเป็นเกือบ 1 ใน 5 ของคลิกทั้งสัปดาห์
+      <div class="callout">
+        💬 <b>คลัสเตอร์บทความอาการตายังเป็นประตูหลักสู่การนัดหมาย</b> — สัปดาห์นี้บทความ "ตากระตุก" (eye-twitching) ยังคงทำคลิกสูงสุด <b>574 คลิก</b> (+38.3%) ตามด้วย "ก้อนไขมันที่เปลือกตา" 471 คลิก และ "ตาพร่ามัว" 380 คลิก (+41.8%) รวมกันเกือบ 22% ของคลิกทั้งสัปดาห์
       </div>
     </div>
 
-    <!-- ===== COL 2: BEFORE & AFTER ===== -->
-    <div>
-      <div class="section-head">📊 เปรียบเทียบก่อน–หลัง (สัปดาห์ต่อสัปดาห์)</div>
-
-      <div class="metric-grid">
+    <!-- CENTER: METRICS + CHART -->
+    <div class="center-panel">
+      <div class="metrics-grid">
         <div class="metric-card">
           <div class="label">🔍 คลิกจากการค้นหา (Clicks)</div>
-          <div class="number">6,175</div>
-          <div class="beforeline"><span class="before-label">สัปดาห์ก่อน</span> 5,767 → <b>6,175</b></div>
-          <span class="change-badge">▲ +7.07%</span>
+          <div class="number">6,686</div>
+          <div class="compare">สัปดาห์ก่อน 5,569 → <strong>6,686</strong></div>
+          <span class="change-badge up">▲ +20.06%</span>
         </div>
         <div class="metric-card">
           <div class="label">👁 การมองเห็น (Impressions)</div>
-          <div class="number">462,075</div>
-          <div class="beforeline"><span class="before-label">สัปดาห์ก่อน</span> 415,105 → <b>462,075</b></div>
-          <span class="change-badge">▲ +11.32%</span>
+          <div class="number">438,880</div>
+          <div class="compare">สัปดาห์ก่อน 449,059 → <strong>438,880</strong></div>
+          <span class="change-badge down">▼ -2.27%</span>
         </div>
         <div class="metric-card">
           <div class="label">🎯 อัตราการคลิก (CTR)</div>
-          <div class="number">1.34%</div>
-          <div class="beforeline"><span class="before-label">สัปดาห์ก่อน</span> 1.39% → <b>1.34%</b></div>
-          <span class="change-badge down">▼ -3.81%</span>
+          <div class="number">1.52%</div>
+          <div class="compare">สัปดาห์ก่อน 1.24% → <strong>1.52%</strong></div>
+          <span class="change-badge up">▲ +22.84%</span>
         </div>
         <div class="metric-card">
           <div class="label">📍 อันดับเฉลี่ย (Avg. Position)</div>
-          <div class="number">6.62</div>
-          <div class="beforeline"><span class="before-label">สัปดาห์ก่อน</span> 6.50 → <b>6.62</b></div>
-          <span class="change-badge down">▼ -0.12 อันดับ</span>
+          <div class="number">6.21</div>
+          <div class="compare">สัปดาห์ก่อน 6.77 → <strong>6.21</strong></div>
+          <span class="change-badge up">▲ ดีขึ้น 0.56 อันดับ</span>
         </div>
       </div>
 
       <div class="chart-card">
-        <div class="chart-title">คลิกรายวัน — สัปดาห์นี้ (จ.–ศ.) เทียบสัปดาห์ก่อน</div>
-        <canvas id="clicksChart" height="168"></canvas>
-        <div class="chart-note">
-          <b>หมายเหตุสำคัญเรื่องความสมบูรณ์ของข้อมูล:</b> Google Search Console มีความล่าช้าในการประมวลผลข้อมูล 2–3 วัน ณ วันจัดทำรายงาน ข้อมูลมีถึงวันศุกร์ที่ 7 ส.ค. 2569 เท่านั้น
-          จึงเปรียบเทียบด้วยกรอบ <b>จันทร์–ศุกร์ (5 วัน)</b> ทั้งสองสัปดาห์ (3–7 ส.ค. เทียบ 27–31 ก.ค.) เพื่อให้เป็นการเทียบที่ยุติธรรม ไม่ใช่ 7 วันเต็ม<br>
+        <h3>คลิกรายวัน — สัปดาห์นี้ (จ.–ศ.) เทียบสัปดาห์ก่อน</h3>
+        <div class="chart-wrap"><canvas id="clicksChart"></canvas></div>
+        <div class="chart-footnote">
+          <strong>หมายเหตุสำคัญเรื่องความสมบูรณ์ของข้อมูล:</strong> Google Search Console มีความล่าช้าในการประมวลผลข้อมูล 2–3 วัน ณ วันจัดทำรายงาน ข้อมูลมีถึงวันศุกร์ที่ 21 ส.ค. 2569 เท่านั้น จึงเปรียบเทียบด้วยกรอบ <strong>จันทร์–ศุกร์ (5 วัน)</strong> ทั้งสองสัปดาห์ (17–21 ส.ค. เทียบ 10–14 ส.ค.) เพื่อให้เป็นการเทียบที่ยุติธรรม ไม่ใช่ 7 วันเต็ม<br>
           อันดับเฉลี่ยคำนวณแบบถ่วงน้ำหนักตามจำนวน Impressions | ตัวเลขทั้งหมดเป็นข้อมูลจริงจาก Google Search Console
         </div>
       </div>
-    </div>
 
-    <!-- ===== COL 3: NEXT STEPS ===== -->
-    <div>
-      <div class="section-head">🚀 แผนงาน &amp; ข้อเสนอถัดไป</div>
-
-      <div class="next-steps-panel">
-        <h3>📌 สรุปสถานะสัปดาห์นี้</h3>
-        <div class="done-item"><span class="step-arrow">✅</span><span>ปริมาณการเข้าชมและการมองเห็นเติบโตต่อเนื่องทั้งสองตัวชี้วัด (+7.1% / +11.3%)</span></div>
-        <div class="done-item"><span class="step-arrow">✅</span><span>คลัสเตอร์บทความอาการตา (ตากระตุก / ตาเหลือง / ตาพร่ามัว) ยังคงเป็นแหล่งผู้เข้าชมหลักของเว็บไซต์</span></div>
-        <div class="done-item"><span class="step-arrow">⚠️</span><span>การมองเห็นโตเร็วกว่าคลิก ทำให้ CTR ลดลงเล็กน้อย (-3.81%) — เป็นสัญญาณว่ามีคำค้นใหม่เข้ามาแต่ยังคลิกไม่ถึงเป้า</span></div>
-
-        <div class="panel-divider"></div>
-
-        <h3>🚀 แผนสัปดาห์ถัดไป (3 เรื่องหลัก)</h3>
-        <div class="step-item"><span class="step-arrow">→</span><span>ปรับหัวข้อและคำอธิบายหน้า (Title/Meta) ของบทความที่คนเห็นมากแต่คลิกน้อย
-          <span class="exp">คาด: ยกระดับ CTR กลับสู่ระดับ 1.39% ขึ้นไปภายใน 2–3 สัปดาห์</span></span></div>
-        <div class="step-item"><span class="step-arrow">→</span><span>เสริมลิงก์ภายในจากบทความยอดนิยมสู่หน้าบริการและหน้านัดหมายแพทย์
-          <span class="exp">คาด: เพิ่มโอกาสเปลี่ยนผู้อ่านบทความเป็นผู้นัดหมาย</span></span></div>
-        <div class="step-item"><span class="step-arrow">→</span><span>ทบทวนบทความที่อันดับตกในสัปดาห์นี้ (เช่น “ตาขวากระตุก” และบทความคันตา) พร้อมอัปเดตเนื้อหาให้สดใหม่
-          <span class="exp">คาด: ดึงอันดับเฉลี่ยกลับสู่ระดับ 6.5 หรือดีกว่า</span></span></div>
-
-        <div class="cta-text">
-          “จากผลลัพธ์ที่เห็นต่อเนื่อง ฐานการมองเห็นบน Google ของโรงพยาบาลกำลังขยายตัวชัดเจน เพื่อไม่ให้เสียโมเมนตัมนี้ ทีมงานขอเสนอต่อยอดด้วยแผนงาน Content &amp; On-page Optimization เฟสถัดไป ซึ่งจะเน้นการเปลี่ยนผู้เข้าชมให้เป็นผู้นัดหมายจริง ทีมงานพร้อมนำเสนอรายละเอียดแผนงานและประมาณการ ROI ในการประชุมครั้งถัดไป”
-        </div>
-      </div>
-
-      <div class="oppo-card">
-        <div class="t">💡 โอกาสที่พบสัปดาห์นี้</div>
-        <div class="b">
-          บทความ <b>“ตากุ้งยิง” (what-is-hordeolum)</b> มีผู้เห็นสูงถึง <b>30,401 ครั้ง</b> แต่มีผู้คลิกเพียง <b>164 ครั้ง (CTR 0.54%)</b> ที่อันดับเฉลี่ย 7.2 —
-          หากปรับหัวข้อและดันอันดับขึ้นสู่หน้าแรกตอนบน จะเป็นหน้าที่มีโอกาสเพิ่มผู้เข้าชมได้มากที่สุดในเว็บไซต์ขณะนี้<br><br>
-          <b>ผู้ที่เติบโตเด่น:</b> บทความ “วุ้นตาเสื่อม” +42.2% (109 → 155 คลิก) และ “ตาแพ้/เยื่อบุตาอักเสบภูมิแพ้” +23.8%
-        </div>
+      <div class="opportunity-card">
+        <h3>💡 โอกาสที่พบสัปดาห์นี้</h3>
+        <p>บทความ <b class="gold">"ตากุ้งยิง" (what-is-hordeolum)</b> มีผู้เห็นสูงถึง <b>32,655 ครั้ง</b> แต่มีผู้คลิกเพียง <b>137 ครั้ง (CTR 0.42%)</b> ที่อันดับเฉลี่ย 7.6 — หากปรับหัวข้อและคำอธิบายหน้า (Title/Meta) ให้ดึงดูดขึ้นและดันอันดับสู่หน้าแรกตอนบน จะเป็นหน้าที่มีโอกาสเพิ่มผู้เข้าชมได้มากที่สุดในเว็บไซต์ขณะนี้</p>
+        <p class="movers"><strong>ผู้ที่เติบโตเด่น:</strong> บทความ "ก้อนไขมันที่เปลือกตา" (eyelid-fat-lumps) +267.97% (128 → 471 คลิก) และบทความ "ตาพร่ามัว" (blurry-vision) +41.79% (268 → 380 คลิก)</p>
       </div>
     </div>
+
+    <!-- RIGHT: NEXT STEPS -->
+    <div class="next-steps-panel">
+      <h3>📌 สรุปสถานะสัปดาห์นี้</h3>
+      <div class="status-item">✅ <span>คลิกและอัตราการคลิกเติบโตพร้อมกันทั้งสองตัวชี้วัด (+20.06% / +22.84%) ขณะที่อันดับเฉลี่ยดีขึ้นจาก 6.77 เป็น 6.21</span></div>
+      <div class="status-item">✅ <span>บทความ "ก้อนไขมันที่เปลือกตา" เติบโตก้าวกระโดด (+267.97%) เสริมคลัสเตอร์บทความอาการตาที่แข็งแกร่งอยู่แล้ว (ตากระตุก, ตาพร่ามัว, ตาเหลือง)</span></div>
+      <div class="status-item">⚠️ <span>การมองเห็นลดลงเล็กน้อย (-2.27%) จากสัปดาห์ก่อน แต่คุณภาพการค้นหาดีขึ้นชัดเจนตาม CTR และอันดับที่ดีขึ้น</span></div>
+
+      <h3 style="margin-top:16px;">🚀 แผนสัปดาห์ถัดไป (3 เรื่องหลัก)</h3>
+      <div class="step-item">
+        <span class="step-arrow">→</span>
+        <span>ปรับหัวข้อและคำอธิบายหน้า (Title/Meta) ของบทความ "ตากุ้งยิง" ที่มองเห็นสูงแต่ CTR ต่ำเพียง 0.42%
+          <span class="step-result">คาด: ยกระดับ CTR ของหน้านี้ให้เข้าใกล้ค่าเฉลี่ยเว็บไซต์ (1.5%) ภายใน 2–3 สัปดาห์</span>
+        </span>
+      </div>
+      <div class="step-item">
+        <span class="step-arrow">→</span>
+        <span>เสริมลิงก์ภายในจากบทความ "ก้อนไขมันที่เปลือกตา" ที่กำลังเติบโตเร็ว สู่หน้าบริการศัลยกรรมเปลือกตาและหน้านัดหมายแพทย์
+          <span class="step-result">คาด: เพิ่มโอกาสเปลี่ยนผู้อ่านบทความเป็นผู้นัดหมาย</span>
+        </span>
+      </div>
+      <div class="step-item">
+        <span class="step-arrow">→</span>
+        <span>ทบทวนกลุ่มบทความที่การมองเห็นลดลงในสัปดาห์นี้ พร้อมอัปเดตเนื้อหาให้สดใหม่
+          <span class="step-result">คาด: ดึงการมองเห็นของเว็บไซต์โดยรวมกลับสู่แนวโน้มเติบโตต่อเนื่องในสัปดาห์ถัดไป</span>
+        </span>
+      </div>
+
+      <div class="cta-text">
+        "จากผลลัพธ์ที่เห็นต่อเนื่อง ทั้งปริมาณคลิกและคุณภาพการค้นหาของโรงพยาบาลกำลังปรับตัวดีขึ้นพร้อมกัน เพื่อไม่ให้เสียโมเมนตัมนี้ ทีมงานขอเสนอต่อยอดด้วยแผนงาน Content &amp; On-page Optimization เฟสถัดไป ซึ่งจะเน้นการเปลี่ยนผู้เข้าชมให้เป็นผู้นัดหมายจริง ทีมงานพร้อมนำเสนอรายละเอียดแผนงานและประมาณการ ROI ในการประชุมครั้งถัดไป"
+      </div>
+    </div>
+
   </div>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- FOOTER -->
   <div class="footer">
-    <div>
-      <b>Data source:</b> Google Search Console via Windsor.ai | Property: sc-domain:bangkokeyehospital.com<br>
-      ช่วงข้อมูลที่ใช้เปรียบเทียบ: 3–7 ส.ค. 2569 เทียบ 27–31 ก.ค. 2569 (จันทร์–ศุกร์ อย่างละ 5 วัน เนื่องจาก GSC ยังประมวลผลข้อมูลวันที่ 8–9 ส.ค. ไม่เสร็จ)
-    </div>
-    <div style="text-align:right">
-      รายงานประจำสัปดาห์ที่ 3–9 สิงหาคม 2569 | จัดทำเมื่อ 10 สิงหาคม 2569<br>
-      ตัวเลขทั้งหมดเป็นข้อมูลจริงจาก Google Search Console — ไม่มีการประมาณการ
-    </div>
+    <div><strong>Data source:</strong> Google Search Console via Windsor.ai | Property: sc-domain:bangkokeyehospital.com<br>ช่วงข้อมูลที่ใช้เปรียบเทียบ: 17–21 ส.ค. 2569 เทียบ 10–14 ส.ค. 2569 (จันทร์–ศุกร์ อย่างละ 5 วัน เนื่องจาก GSC ยังประมวลผลข้อมูลวันที่ 22–24 ส.ค. ไม่เสร็จ)</div>
+    <div style="text-align:right;">รายงานประจำสัปดาห์ที่ 17–23 สิงหาคม 2569 | จัดทำเมื่อ 24 สิงหาคม 2569<br>ตัวเลขทั้งหมดเป็นข้อมูลจริงจาก Google Search Console — ไม่มีการประมาณการ</div>
   </div>
+
 </div>
 
 <script>
-const ctx = document.getElementById('clicksChart').getContext('2d');
-new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ['จันทร์','อังคาร','พุธ','พฤหัสบดี','ศุกร์'],
-    datasets: [
-      { label: 'สัปดาห์ก่อน (27–31 ก.ค.)', data: [1234,1126,1115,1186,1106],
-        backgroundColor: '#A8C4CC', borderRadius: 4, borderSkipped: false },
-      { label: 'สัปดาห์นี้ (3–7 ส.ค.)', data: [1406,1300,1265,1168,1036],
-        backgroundColor: '#0057A8', borderRadius: 4, borderSkipped: false }
-    ]
-  },
-  options: {
-    responsive: true,
-    plugins: {
-      legend: { position: 'bottom', labels: { font: { family: 'Sarabun', size: 11 }, boxWidth: 12, padding: 14, color: '#2C3E50' } },
-      tooltip: { callbacks: { label: c => c.dataset.label + ': ' + c.parsed.y.toLocaleString() + ' คลิก' } }
+  const ctx = document.getElementById('clicksChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์'],
+      datasets: [
+        {
+          label: 'สัปดาห์ก่อน (10–14 ส.ค.)',
+          data: [1268, 1097, 1091, 1077, 1036],
+          backgroundColor: '#A8C4CC',
+          borderRadius: 4,
+          maxBarThickness: 34
+        },
+        {
+          label: 'สัปดาห์นี้ (17–21 ส.ค.)',
+          data: [1308, 1181, 1385, 1428, 1384],
+          backgroundColor: '#0057A8',
+          borderRadius: 4,
+          maxBarThickness: 34
+        }
+      ]
     },
-    scales: {
-      y: { beginAtZero: true, grid: { color: '#E8EDF2' },
-           ticks: { font: { family: 'Sarabun', size: 10 }, color: '#2C3E50' } },
-      x: { grid: { display: false }, ticks: { font: { family: 'Sarabun', size: 11 }, color: '#2C3E50' } }
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'top', labels: { font: { family: 'Sarabun', size: 11 }, color: '#2C3E50', boxWidth: 12 } },
+        tooltip: { titleFont: { family: 'Sarabun' }, bodyFont: { family: 'Sarabun' } }
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { family: 'Sarabun', size: 10 }, color: '#2C3E50' } },
+        y: { grid: { color: '#E8EDF2' }, ticks: { font: { family: 'Sarabun', size: 10 }, color: '#2C3E50' }, beginAtZero: false }
+      }
     }
-  }
-});
+  });
 </script>
+
 </body>
 </html>
