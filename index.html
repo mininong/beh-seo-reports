@@ -1,134 +1,89 @@
 <!DOCTYPE html>
-<html lang="th">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BEH Weekly Website & SEO Report 4–10 ต.ค. 2569</title>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BEH Weekly Website & SEO Report 12–18 Oct 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;700;800&family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
-:root{--beh-navy:#0057A8;--beh-sky:#4A9ED4;--beh-teal-soft:#A8C4CC;--beh-gold:#C9A84C;--beh-white-warm:#F8F9FA;--beh-charcoal:#2C3E50;--beh-gray-light:#E8EDF2;--beh-success:#27AE60;
---font-heading:'Prompt','Sarabun',sans-serif;--font-body:'Sarabun','Prompt',sans-serif;--radius-card:8px;--radius-badge:4px;--shadow-card:0 2px 8px rgba(0,87,168,.10)}
+:root{--navy:#0057A8;--sky:#4A9ED4;--teal:#A8C4CC;--gold:#C9A84C;--bg:#F8F9FA;--ink:#2C3E50;--line:#E8EDF2;--ok:#27AE60;--mute:#6B7C93;
+--fh:'Prompt','Sarabun',sans-serif;--fb:'Sarabun','Prompt',sans-serif;--r:8px;--sh:0 2px 8px rgba(0,87,168,.10)}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--beh-white-warm);color:var(--beh-charcoal);font-family:var(--font-body);font-size:12px;line-height:1.5;padding:16px}
-.report-wrapper{max-width:1280px;margin:0 auto}
-header{background:var(--beh-navy);color:#fff;border-radius:var(--radius-card);padding:16px 24px;margin-bottom:20px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-header h1{font-family:var(--font-heading);font-size:clamp(20px,2.5vw,26px);font-weight:700}
-header .sub{font-size:13px;opacity:.9}
-header .goal{font-size:11px;margin-top:6px;color:var(--beh-teal-soft);max-width:640px}
-header .meta{font-size:11px;text-align:right;line-height:1.7}
-header .meta b{color:var(--beh-gold)}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);font-size:12px;padding:24px}
+.wrap{max-width:1280px;margin:0 auto}
+header{background:var(--navy);color:#fff;border-radius:var(--r);padding:16px 24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+header h1{font-family:var(--fh);font-size:clamp(20px,2.5vw,26px);font-weight:700}
+header .sub{font-size:12px;opacity:.9;margin-top:2px}
+header .meta{font-size:11px;text-align:right;line-height:1.6;opacity:.95}
+.goal{margin:12px 0 20px;font-size:11px;color:var(--mute);font-style:italic}
 .grid{display:grid;grid-template-columns:30fr 40fr 30fr;gap:20px}
-@media(max-width:900px){.grid{grid-template-columns:1fr}}
-h2{font-family:var(--font-heading);font-size:15px;font-weight:600;color:var(--beh-navy);margin-bottom:10px}
-.highlight-item{display:flex;gap:12px;padding:12px;background:#fff;border-radius:var(--radius-card);border-left:4px solid var(--beh-gold);margin-bottom:10px;box-shadow:var(--shadow-card)}
-.rank{font-size:24px;width:32px;text-align:center}
-.headline{font-family:var(--font-heading);font-weight:700;font-size:14px}
-.headline .big{color:var(--beh-gold);font-size:26px;font-weight:800;display:block;line-height:1.2}
-.sub-c{font-size:11px;color:#6B7C93;margin-top:2px}
+@media(max-width:980px){.grid{grid-template-columns:1fr}}
+h2{font-family:var(--fh);font-size:15px;font-weight:600;color:var(--navy);margin-bottom:10px}
+.hl{display:flex;gap:12px;padding:12px;background:#fff;border-radius:var(--r);border-left:4px solid var(--gold);margin-bottom:8px;box-shadow:var(--sh)}
+.hl .rank{font-size:24px;width:32px;text-align:center}
+.hl .head{font-weight:700;font-size:14px;line-height:1.35}
+.hl .head b{font-family:var(--fh);color:var(--gold);font-size:22px;font-weight:800}
+.hl .sub{font-size:11px;color:var(--mute);margin-top:3px;line-height:1.5}
 .cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
-.metric-card{background:#fff;border-radius:var(--radius-card);padding:12px 14px;box-shadow:var(--shadow-card);border-left:4px solid var(--beh-navy)}
-.metric-card .lbl{font-size:11px;color:#6B7C93}
-.metric-card .number{font-family:var(--font-heading);font-size:clamp(24px,3vw,32px);font-weight:800;color:var(--beh-navy);line-height:1.1}
-.metric-card .before{font-size:11px;color:#6B7C93}
-.badge{display:inline-block;background:var(--beh-success);color:#fff;font-size:11px;padding:2px 8px;border-radius:var(--radius-badge);font-weight:600;margin-top:4px}
-.badge.flat{background:var(--beh-teal-soft);color:var(--beh-charcoal)}
-.chart-box{background:#fff;border-radius:var(--radius-card);padding:12px;box-shadow:var(--shadow-card)}
-.chart-box h3{font-family:var(--font-heading);font-size:13px;margin-bottom:6px}
-.chart-wrap{position:relative;height:220px}
-.foot-note{font-size:10px;color:#6B7C93;margin-top:6px}
-.impact{margin-top:12px;font-size:11px;background:#fff;border-left:3px solid var(--beh-sky);padding:8px 10px;border-radius:var(--radius-badge);box-shadow:var(--shadow-card)}
-.next-steps-panel{background:var(--beh-navy);color:#fff;border-radius:var(--radius-card);padding:16px}
-.next-steps-panel h3{color:var(--beh-gold);font-family:var(--font-heading);font-size:14px;margin:0 0 8px}
-.step-item{display:flex;gap:8px;margin-bottom:10px;font-size:11px;line-height:1.5}
-.step-arrow{color:var(--beh-gold);font-weight:700}
-.done{font-size:11px;margin-bottom:6px}
-.cta-text{background:rgba(255,255,255,.1);border-radius:var(--radius-badge);padding:10px;font-size:11px;font-style:italic;margin-top:12px;border-left:3px solid var(--beh-gold)}
-footer{margin-top:20px;font-size:10px;color:#6B7C93;border-top:1px solid var(--beh-gray-light);padding-top:8px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-@media print{body{padding:0}.report-wrapper{width:297mm}.metric-card,.highlight-item,.chart-box,.impact{box-shadow:none;border:1px solid var(--beh-gray-light)}}
-</style>
-</head>
-<body>
-<div class="report-wrapper">
-<header>
-  <div>
-    <h1>🏥 โรงพยาบาลจักษุกรุงเทพ | Bangkok Eye Hospital</h1>
-    <div class="sub">รายงานการเติบโตของเว็บไซต์ &amp; การขยายฐานคนไข้ผ่านออนไลน์ ประจำสัปดาห์ 4–10 ต.ค. 2569</div>
-    <div class="goal">เป้าหมาย: เพิ่มการมองเห็นเว็บไซต์บนผลการค้นหา เพื่อดึงดูดผู้ป่วยใหม่จากช่องทางออนไลน์ และลดการพึ่งพาการตลาดแบบ Paid โดยไม่จำเป็น</div>
-  </div>
-  <div class="meta">
-    <div><b>ช่วงรายงาน:</b> 4–10 ต.ค. 2569</div>
-    <div><b>เปรียบเทียบกับ:</b> 27 ก.ย.–3 ต.ค. 2569</div>
-    <div><b>แหล่งข้อมูล:</b> Google Search Console</div>
-    <div><b>วันที่จัดทำ:</b> 12 ต.ค. 2569 | ฝ่ายการตลาดดิจิทัล</div>
-  </div>
-</header>
-
+.card{background:#fff;border-radius:var(--r);padding:12px 14px;box-shadow:var(--sh);border-left:4px solid var(--navy)}
+.card .lab{font-size:11px;color:var(--mute)}
+.card .num{font-family:var(--fh);font-size:28px;font-weight:800;color:var(--navy);line-height:1.1;margin:4px 0}
+.card .bef{font-size:10px;color:var(--mute)}
+.badge{display:inline-block;font-size:11px;font-weight:600;color:#fff;border-radius:4px;padding:2px 8px;margin-top:4px}
+.up{background:var(--ok)} .flat{background:var(--sky)} .warn{background:var(--gold)}
+.chart{background:#fff;border-radius:var(--r);box-shadow:var(--sh);padding:14px}
+.chart .box{position:relative;height:200px}
+.note{font-size:9.5px;color:var(--mute);margin-top:6px;line-height:1.5}
+.impact{margin-top:12px;font-size:11px;padding:10px 12px;background:#fff;border-radius:var(--r);border-left:4px solid var(--sky)}
+.next{background:var(--navy);color:#fff;border-radius:var(--r);padding:16px}
+.next h3{color:var(--gold);font-family:var(--fh);font-size:14px;margin:0 0 8px}
+.next .st{display:flex;gap:8px;margin-bottom:9px;font-size:11px;line-height:1.5}
+.next .ar{color:var(--gold);font-weight:bold}
+.next .cta{background:rgba(255,255,255,.1);border-radius:4px;padding:10px;font-size:11px;font-style:italic;margin-top:12px;border-left:3px solid var(--gold);line-height:1.6}
+.next hr{border:0;border-top:1px solid rgba(255,255,255,.2);margin:12px 0}
+footer{margin-top:20px;padding-top:10px;border-top:1px solid var(--line);font-size:9.5px;color:var(--mute);line-height:1.6}
+@media print{body{padding:0}.wrap{width:297mm}}
+</style></head><body><div class="wrap">
+<header><div><h1>🏥 โรงพยาบาลจักษุกรุงเทพ | Bangkok Eye Hospital</h1>
+<div class="sub">รายงานสถานะเว็บไซต์ &amp; การมองเห็นบน Google ประจำสัปดาห์ (Website &amp; SEO)</div></div>
+<div class="meta">ช่วงรายงาน: 12–18 ต.ค. 2569 (จ.–อา.)<br>เทียบกับ: 5–11 ต.ค. 2569<br>แหล่งข้อมูล: Google Search Console (Page indexing)<br>วันที่จัดทำ: 26 ต.ค. 2569</div></header>
+<p class="goal">เป้าหมาย: เพิ่มการมองเห็นเว็บไซต์บนผลการค้นหา เพื่อดึงดูดผู้ป่วยใหม่จากช่องทางออนไลน์ และลดการพึ่งพาการตลาดแบบ Paid โดยไม่จำเป็น</p>
 <div class="grid">
-  <section>
-    <h2>⭐ Top 3 Highlights</h2>
-    <div class="highlight-item"><div class="rank">🥇</div><div>
-      <div class="headline"><span class="big">+8.3%</span>คลิกจาก Google เพิ่มขึ้นเทียบสัปดาห์ก่อน</div>
-      <div class="sub-c">6,437 → 6,973 คลิก (+536) หมายความว่ามีผู้สนใจเข้าถึงข้อมูลโรงพยาบาลเพิ่มอีก 536 ราย ในสัปดาห์เดียว โดยไม่ต้องจ่ายค่าคลิก</div></div></div>
-    <div class="highlight-item"><div class="rank">📈</div><div>
-      <div class="headline"><span class="big">+52%</span>คำค้นชื่อโรงพยาบาลเพิ่มขึ้นชัดเจน</div>
-      <div class="sub-c">"bangkok eye hospital" 46 → 70 คลิก (CTR 18.5%) และ "โรงพยาบาลจักษุกรุงเทพ" 17 → 29 คลิก — สะท้อนว่าคนจดจำและค้นหาชื่อเราโดยตรงมากขึ้น</div></div></div>
-    <div class="highlight-item"><div class="rank">🔍</div><div>
-      <div class="headline"><span class="big">+53%</span>หน้าแรกได้คลิกเพิ่มมากที่สุด</div>
-      <div class="sub-c">150 → 230 คลิก ขณะที่ "ตาเหลืองเกิดจากอะไร" ได้คลิกสูงสุด 172 ครั้ง ที่อันดับเฉลี่ย 1.2 — เหมือนป้ายดิจิทัลหน้าแรกที่ทำงานตลอด 24 ชั่วโมง</div></div></div>
-  </section>
-
-  <section>
-    <h2>📊 Before &amp; After</h2>
-    <div class="cards">
-      <div class="metric-card"><div class="lbl">🔍 Clicks (คลิก)</div><div class="number">6,973</div><div class="before">ก่อน: 6,437</div><span class="badge">▲ +8.3%</span></div>
-      <div class="metric-card"><div class="lbl">👁 Impressions (การแสดงผล)</div><div class="number">486,388</div><div class="before">ก่อน: 467,037</div><span class="badge">▲ +4.1%</span></div>
-      <div class="metric-card"><div class="lbl">🎯 CTR (อัตราคลิก)</div><div class="number">1.4%</div><div class="before">ก่อน: 1.4%</div><span class="badge flat">● คงที่</span></div>
-      <div class="metric-card"><div class="lbl">📍 อันดับเฉลี่ย</div><div class="number">5.9</div><div class="before">ก่อน: 6.0</div><span class="badge">▲ ดีขึ้น 0.1</span></div>
-    </div>
-    <div class="chart-box">
-      <h3>คลิกรายวัน: สัปดาห์นี้ vs สัปดาห์ก่อน</h3>
-      <div class="chart-wrap"><canvas id="clicksChart"></canvas></div>
-      <div class="foot-note">แต่ละวันเทียบตามลำดับวันในสัปดาห์ (อา.–ส.) · ข้อมูลครบทั้ง 7 วัน ไม่พบวันที่ข้อมูลต่ำผิดปกติจากความล่าช้าของ Google Search Console</div>
-    </div>
-    <div class="impact">💬 การเติบโตรอบนี้มาจากการแสดงผลที่เพิ่มขึ้นและอันดับที่ดีขึ้นเล็กน้อย ไม่ใช่ CTR ที่ดีขึ้น — จึงยังมีโอกาสเพิ่มคลิกได้อีกโดยปรับหน้าที่มีผู้เห็นมากแต่คลิกน้อย</div>
-  </section>
-
-  <section>
-    <div class="next-steps-panel">
-      <h3>📌 สิ่งที่พบในสัปดาห์นี้</h3>
-      <div class="done">✅ หน้าแรก, yellow-eyes, subconjunctival-hemorrhage คลิกเพิ่มขึ้น</div>
-      <div class="done">✅ คำค้นชื่อแบรนด์เติบโตต่อเนื่อง</div>
-      <div class="done">⚠️ allergic-conjunctivitis (181 → 150) และ what-is-hordeolum (194 → 171) คลิกลดลง</div>
-      <h3 style="margin-top:14px">🚀 แผนสัปดาห์ถัดไป</h3>
-      <div class="step-item"><span class="step-arrow">→</span><span>ปรับ title/meta หน้า what-is-hordeolum (39,938 impressions, CTR 0.4%) — หาก CTR ถึง 1% ได้คลิกเพิ่มราว 230 ครั้ง/สัปดาห์*</span></div>
-      <div class="step-item"><span class="step-arrow">→</span><span>ตรวจหน้าตากระตุกที่หัวข้อซ้ำกัน (causes-and-prevention… กับ eye-twitching-cause…) พิจารณา canonical/redirect</span></div>
-      <div class="step-item"><span class="step-arrow">→</span><span>เช็กว่ามีการปรับหน้าใดที่ทำให้คลิกขึ้น เพื่อนำไปใช้ซ้ำ และเฝ้าดูหน้าที่คลิกลด</span></div>
-      <div class="cta-text">จากผลลัพธ์ที่เริ่มเห็น การลงทุนด้านการปรับ Content &amp; SEO ต่อเนื่องจะช่วยเปลี่ยนการมองเห็นที่เพิ่มขึ้นให้เป็นคลิกจริง ทีมงานพร้อมนำเสนอแผนงานและประมาณการผลลัพธ์ในการประชุมครั้งถัดไป</div>
-    </div>
-  </section>
+<section><h2>Top 3 Highlights</h2>
+<div class="hl"><div class="rank">🥇</div><div><div class="head"><b>1,603</b> หน้าที่ Google จัดเก็บแล้ว (+150, +10.3%)</div><div class="sub">เพิ่มขึ้นจาก 1,453 หน้าเมื่อสัปดาห์ก่อน และฟื้นขึ้น 24.8% จากจุดต่ำสุด 1,284 หน้า (19 ก.ย.) — หน้าที่ถูกจัดเก็บมากขึ้น = โอกาสให้ผู้ป่วยค้นพบบริการของเราได้มากขึ้น</div></div></div>
+<div class="hl"><div class="rank">📈</div><div><div class="head"><b>483,126</b> ครั้งที่เว็บไซต์ปรากฏบน Google</div><div class="sub">ทรงตัวเมื่อเทียบกับสัปดาห์ก่อน (483,590 ครั้ง, -0.1%) เฉลี่ยราว 69,018 ครั้ง/วัน — หมายความว่าการมองเห็นหยุดการลดลงช่วงปลาย ก.ย. แล้ว</div></div></div>
+<div class="hl"><div class="rank">⚡</div><div><div class="head"><b>61%</b> ของหน้าที่ยังไม่ถูกจัดเก็บ ถูกบล็อกด้วย robots.txt</div><div class="sub">4,409 จาก 7,264 หน้า — เป็นจุดตรวจสอบที่ใหญ่ที่สุด ควรยืนยันว่าตั้งใจบล็อก (เช่น URL ซ้ำ/พารามิเตอร์) หรือพลาดหน้าบริการสำคัญ</div></div></div>
+</section>
+<section><h2>Before &amp; After Impact</h2>
+<div class="cards">
+<div class="card"><div class="lab">🔍 การแสดงผลบน Google (Impressions)</div><div class="num">483,126</div><div class="bef">ก่อน: 483,590</div><span class="badge flat">-0.1% ทรงตัว</span></div>
+<div class="card"><div class="lab">📍 หน้าที่ถูกจัดเก็บ (Indexed)</div><div class="num">1,603</div><div class="bef">ก่อน: 1,453</div><span class="badge up">▲ +10.3%</span></div>
+<div class="card"><div class="lab">🚧 หน้าที่ยังไม่ถูกจัดเก็บ</div><div class="num">7,264</div><div class="bef">ก่อน: 7,124</div><span class="badge warn">▲ +2.0% ควรติดตาม</span></div>
+<div class="card"><div class="lab">📅 สัดส่วนหน้าที่ถูกจัดเก็บ</div><div class="num">18.1%</div><div class="bef">ก่อน: 16.9%</div><span class="badge up">▲ +1.1 จุด</span></div>
 </div>
-
-<footer>
-  <span>Data source: Google Search Console (Web, bangkokeyehospital.com) via Windsor.ai · ข้อมูลถึง 10 ต.ค. 2569</span>
-  <span>* ประมาณการจาก impressions ปัจจุบัน (39,938 × 1% − 171 คลิก) ผลจริงอาจแตกต่าง</span>
-</footer>
+<div class="chart"><div class="box"><canvas id="c1"></canvas></div>
+<div class="note">กราฟ: Impressions รายวัน สัปดาห์นี้ (12–18 ต.ค.) เทียบสัปดาห์ก่อน (5–11 ต.ค.) ครบ 7 วันทั้งสองสัปดาห์ ข้อมูลล่าสุดในไฟล์คือ 19 ต.ค. จึงไม่มีผลกระทบจากข้อมูลล่าช้า | ไฟล์ที่ได้รับไม่มีข้อมูล Clicks, CTR และอันดับเฉลี่ย รายงานนี้จึงไม่รายงานตัวเลขเหล่านั้น</div></div>
+<div class="chart" style="margin-top:12px"><div class="box" style="height:150px"><canvas id="c2"></canvas></div>
+<div class="note">แนวโน้มหน้าที่ถูกจัดเก็บ (Indexed) ณ ทุกวันอาทิตย์ ตั้งแต่ ส.ค. — สูงสุด 2,031 หน้า (18 ส.ค.) ลดลงถึง 1,284 (19 ก.ย.) และกำลังฟื้นตัว ปัจจุบันต่ำกว่าจุดสูงสุด 21.1%</div></div>
+<div class="impact">💬 หน้าที่ Google จัดเก็บเป็นพื้นฐานของการแสดงผลบนผลการค้นหา — ยิ่งหน้าบริการสำคัญถูกจัดเก็บครบ ยิ่งมีโอกาสถูกค้นพบโดยไม่ต้องจ่ายค่าโฆษณา</div>
+</section>
+<section><div class="next"><h3>📌 สิ่งที่ตรวจพบสัปดาห์นี้</h3>
+<div class="st"><span class="ar">✓</span><span>หน้าที่ถูกจัดเก็บฟื้นตัว +150 หน้า (+10.3%) การแสดงผลทรงตัว</span></div>
+<div class="st"><span class="ar">✓</span><span>จัดกลุ่มสาเหตุที่หน้าไม่ถูกจัดเก็บครบ 10 ประเภท รวม 7,264 หน้า</span></div>
+<div class="st"><span class="ar">!</span><span>พบ 375 หน้าที่ถูกจัดเก็บทั้งที่ถูกบล็อกด้วย robots.txt และ 878 หน้า canonical ที่การตรวจสอบซ้ำไม่ผ่าน</span></div>
+<hr><h3>🚀 แผนสัปดาห์ถัดไป</h3>
+<div class="st"><span class="ar">→</span><span>ตรวจรายการ 4,409 หน้าที่ถูกบล็อกด้วย robots.txt — คาดผล: หน้าบริการสำคัญไม่ถูกบล็อกโดยไม่ตั้งใจ</span></div>
+<div class="st"><span class="ar">→</span><span>แก้ canonical 878 หน้า และจัดการ 1,020 หน้า redirect / 270 หน้า 404 — คาดผล: ลดหน้าไร้ประโยชน์ในดัชนี</span></div>
+<div class="st"><span class="ar">→</span><span>ส่งไฟล์ Performance (Clicks, CTR, อันดับ) เพื่อวัดผลถึงระดับคีย์เวิร์ดและหน้า</span></div>
+<div class="cta"><b style="color:var(--gold);font-style:normal">💡 ข้อเสนอเชิงกลยุทธ์</b><br>จากสัญญาณการฟื้นตัวของหน้าที่ถูกจัดเก็บ ทีมงานเสนอให้ต่อยอดด้วยการทำความสะอาดโครงสร้างเทคนิคของเว็บไซต์ (robots.txt, canonical, redirect) เพื่อให้ Google เข้าถึงหน้าบริการสำคัญได้ครบ ทีมพร้อมนำเสนอแผนงานและเป้าหมายที่วัดผลได้ในโอกาสถัดไป</div></div></section>
+</div>
+<footer>Data source: Google Search Console (Page indexing export, ข้อมูลถึง 19 ต.ค. 2569) | สัปดาห์ = จันทร์–อาทิตย์ | Impressions รวมรายวัน 7 วัน; Indexed/Not indexed เป็นค่า ณ วันอาทิตย์สิ้นสัปดาห์ (18 ต.ค. เทียบ 11 ต.ค.) | ผู้จัดทำ: ฝ่ายการตลาดดิจิทัล</footer>
 </div>
 <script>
-const labels=['อา.','จ.','อ.','พ.','พฤ.','ศ.','ส.'];
-const prev=[835,963,1003,925,909,937,865];
-const last=[956,1073,1082,1051,1005,954,852];
-new Chart(document.getElementById('clicksChart'),{
-  type:'bar',
-  data:{labels,datasets:[
-    {label:'27 ก.ย.–3 ต.ค.',data:prev,backgroundColor:'#A8C4CC',borderRadius:3},
-    {label:'4–10 ต.ค.',data:last,backgroundColor:'#0057A8',borderRadius:3},
-    {type:'line',label:'แนวโน้มสัปดาห์นี้',data:last,borderColor:'#C9A84C',backgroundColor:'#C9A84C',tension:.35,pointRadius:3,borderWidth:2}
-  ]},
-  options:{responsive:true,maintainAspectRatio:false,
-    plugins:{legend:{position:'bottom',labels:{font:{family:'Sarabun',size:11},color:'#2C3E50'}}},
-    scales:{y:{beginAtZero:true,grid:{color:'#E8EDF2'},ticks:{color:'#2C3E50'}},x:{grid:{display:false},ticks:{color:'#2C3E50',font:{family:'Sarabun'}}}}}
-});
-</script>
-</body>
-</html>
+const lab=["จ.", "อ.", "พ.", "พฤ.", "ศ.", "ส.", "อา."];
+new Chart(document.getElementById('c1'),{type:'bar',data:{labels:lab,datasets:[
+{label:'สัปดาห์ก่อน (5–11 ต.ค.)',data:[72400, 71390, 73677, 71766, 66685, 61950, 65722],backgroundColor:'#A8C4CC',borderRadius:3},
+{label:'สัปดาห์นี้ (12–18 ต.ค.)',data:[65816, 70737, 72905, 71503, 66022, 64752, 71391],backgroundColor:'#0057A8',borderRadius:3}]},
+options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#2C3E50',font:{family:'Sarabun',size:11}}}},
+scales:{y:{beginAtZero:true,grid:{color:'#E8EDF2'},ticks:{color:'#2C3E50',callback:v=>(v/1000)+'k'}},x:{grid:{display:false},ticks:{color:'#2C3E50'}}}}});
+new Chart(document.getElementById('c2'),{type:'line',data:{labels:["08-09", "08-16", "08-23", "08-30", "09-06", "09-13", "09-20", "09-27", "10-04", "10-11", "10-18"],datasets:[{label:'Indexed',data:[1875, 2020, 1999, 1865, 1633, 1633, 1284, 1377, 1377, 1453, 1603],borderColor:'#C9A84C',backgroundColor:'rgba(201,168,76,.15)',fill:true,tension:.3,pointRadius:3}]},
+options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{grid:{color:'#E8EDF2'},ticks:{color:'#2C3E50'}},x:{grid:{display:false},ticks:{color:'#2C3E50',font:{size:10}}}}}});
+</script></body></html>
